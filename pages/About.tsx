@@ -92,8 +92,27 @@ export default function About() {
         </div>
         <div className='w-full h-[40px]'></div>
          </div>
-         <div className='w-full flex justify-center bg-cyan-600'>
-            <h1 className='text-white'>Skills</h1>
+         <div className='w-full flex flex-col items-center bg-cyan-600'>
+            <h1 className='text-white text-5xl font-bold mt-4'>SKILLS</h1>
+            <div className='w-full'>
+              <h3 className='font-bold text-white text-3xl mx-4 my-4'>Soft Skills</h3>
+              <div>
+                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Creativity</h4>
+                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Teamwork</h4>
+                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Critical thinking</h4>
+                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Willingness to learn</h4>
+              </div>
+            </div>
+            <div className='w-full'>
+              <h3 className='font-bold text-white text-3xl mx-4 my-4'>Hard Skills</h3>
+              <div>
+                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Profficient in React JS</h4>
+                <h4 className='font-bold text-white text-xl mx-8 my-2'>• UI Frameworks</h4>
+                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Back-end Development</h4>
+                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Adobe After Effects</h4>
+              </div>
+            </div>
+            <div className='w-full h-[40px]'></div>
          </div>
         </div>
         <Footer/>
