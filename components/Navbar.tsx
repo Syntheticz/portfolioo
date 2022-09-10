@@ -4,7 +4,7 @@ import React from 'react'
 export default function Navbar() {
   return (
     <div className="sticky z-20 flex items-center w-screen sm:w-full bg-cyan-700 h-12">
-        <Link href={'/'}><a><h1 className='hover:text-cyan-900 transition ease-in-out text-lg font-bold font-Montserrat text-white ml-4 mr-auto'>Leviticus</h1></a></Link>
+        <Link href={'/'}><a><h1 className='hover:text-cyan-900 transition ease-in-out text-lg font-bold font-Montserrat text-white ml-4 mr-auto'>Phil Guiang</h1></a></Link>
         <div  className='h-full items-center flex ml-auto'>
         <Link href={'/'}><a><h3 className='mr-4 py-2.5 px-2 text-lg font-semibold text-white hover:bg-cyan-200 transition ease-in-out hover:text-cyan-700 opacity-0 hidden sm:block sm:opacity-100'>Home</h3></a></Link>
         <Link href={'/About'}><a><h3 className='mr-4 py-2.5 px-2 text-lg font-semibold text-white hover:bg-cyan-200 transition ease-in-out hover:text-cyan-700 opacity-0 hidden sm:block sm:opacity-100'>About</h3></a></Link>

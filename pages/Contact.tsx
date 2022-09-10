@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ChangeEventHandler } from 'react'
 import Navbar from '../components/Navbar'
 import Strip from '../components/Strip'
 import Images from '../components/images/images'
@@ -20,14 +20,15 @@ export default function Contact() {
     
   const [form, setForm] = useState({name: '', email: '', message: ''});
 
-
   const handleOnClick = () => {
     console.log(form)
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm(() => {return {...form,[e.target.name] : e.target.value,}})
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+    setForm(() => {return {...form,[event.target.name] : event.target.value,}})
   }
+
+  
 
   return (
     <>
