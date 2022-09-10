@@ -3,9 +3,14 @@ import Navbar from '../components/Navbar'
 import { Parallax } from 'react-parallax'
 import Footer from '../components/Footer'
 import cover from '../components/images/bgcovered.jpg';
-import Image from 'next/image';
 import dp from '../components/images/dp.jpg';
-import test from '../components/images/react.png';
+import Images from '../components/images/images'
+import Strip from '../components/Strip';
+import Head from 'next/head';
+
+
+
+
 
 const Container = () => (
   <Parallax blur={5} bgImage={cover.src} bgImageStyle={{objectFit: 'cover'}} bgImageAlt="Background Image" strength={300}>
@@ -16,103 +21,70 @@ const Container = () => (
   </Parallax>
 );
 
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-  return images;
-}
-
-const images = importAll(require.context('../components/images', false, /\.(png|jpe?g|svg)$/));
-
 
 
 export default function About() {
     
   return (
     <>
+        <Head>
+          <title>Phil Guiang | about</title>
+        </Head>
         <div className='flex'>
             <Navbar/>
         </div>
             <Container/>
-        <div className='bg-cyan-700 flex flex-col sm:flex-row w-screen h-auto'>
-          <div className='w-cover sm:w-1/3 h-full items-center flex flex-col'>
-            <div className='w-[80vw] sm:w-[90%] mt-[8rem]'>
-                <Image src={dp.src} layout='responsive' width={100} height={100} className='rounded-[100%]' />
-            </div>
+        <div className='bg-cyan-700 flex flex-col items-center sm:flex-row w-screen h-auto'>
+          <div className='flex justify-center w-screen mt-8 sm:m-4 sm:w-1/2 '>
+            <img className='w-[80%] shadow-lg rounded-[100%]' src={dp.src} alt="pogi" />
           </div>
-          <div className='w-full h-full '>
-                <h1 className='text-white font-bold text-6xl mx-[4rem] mt-[12rem]'>About Me...</h1>
+          <div className='w-screen h-full'>
+                <h1 className='text-white font-bold text-6xl mx-[4rem] mt-8 sm:mt-[12rem]'>About Me...</h1>
                 <p className='text-white text-xl my-[4rem] mx-[4rem]'>&emsp;&emsp;&emsp; Hello, my name is Philip, and I am now enrolled in the Technological University of the Philippines. I am now pursuing a Bachelor of Science degree in computer science. I've always been fascinated by new and ancient technologies, as well as how they function and are designed. When I was in junior high, I participated in various computer-related events, which inspired me to pursue a career in this industry.<br/><br />&emsp;&emsp;&emsp;I had a lot of individuals in this sector that I looked up to, and they taught me a lot, not just about technology but also about life in general. Being good at what I do and striving for greatness every day keeps me going, with a little help from coffee. We only have to believe that we can do anything because God gives us the ability to do so. </p>
           </div>
+          <div className='w-full h-[40px] block sm:hidden'></div>
         </div>
         <div className='w-screen h-auto flex flex-col sm:flex-row-reverse bg-slate-400'>
-         <div className='w-full sm:w-1/2 h-full bg-cyan-800'>
-         <h1 className='text-white font-bold text-2xl lg:text-4xl line-clamp-2 lg:p-4 p-8'>Handled Languages/Frameworks</h1>
-
-         <div className='w-[90%] mt-4 flex items-center mx-4 h-[60px]'>
-            <div className='flex bg-white items-center rounded-[100%] justify-center w-[60px] h-full'>
-              <img className='w-full h-full rounded-[100%]' src={images["javascript.png"].default.src} alt="React" /> 
-            </div>
-            <h1 className='mx-4 font-bold text-2xl text-white'>JavaScript</h1>
         </div>
-
-        <div className='w-[90%] mt-4 flex items-center mx-4 h-[60px]'>
-            <div className='flex bg-white items-center rounded-[100%] justify-center w-[60px] h-full'>
-              <img className=' h-2/3 object-cover ' src={images["react.png"].default.src} alt="React" /> 
-            </div>
-            <h1 className='mx-4 font-bold text-2xl text-white'>React</h1>
-        </div>
-
-        <div className='w-[90%] mt-4 flex items-center mx-4 h-[60px]'>
-            <div className='flex bg-white items-center rounded-[100%] justify-center w-[60px] h-full'>
-              <img className='h-1/2 object-cover' src={images["next.png"].default.src} alt="React" /> 
-            </div>
-            <h1 className='mx-4 font-bold text-2xl text-white'>Next JS</h1>
-        </div>
-
-        <div className='w-[90%] mt-4 flex items-center mx-4 h-[60px]'>
-            <div className='flex bg-white items-center rounded-[100%] justify-center w-[60px] h-full'>
-              <img className='w-full h-full rounded-[100%]' src={images["tailwind.png"].default.src} alt="React" /> 
-            </div>
-            <h1 className='mx-4 font-bold text-2xl text-white'>Tailwind CSS</h1>
-        </div>
-
-        <div className='w-[90%] mt-4 flex items-center mx-4 h-[60px]'>
-            <div className='flex bg-white items-center rounded-[100%] justify-center w-[60px] h-full'>
-              <img className='w-[90%] rounded-[100%]' src={images["csharp.png"].default.src} alt="React" /> 
-            </div>
-            <h1 className='mx-4 font-bold text-2xl text-white'>C#</h1>
-        </div>
-
-        <div className='w-[90%] mt-4 flex items-center mx-4 h-[60px]'>
-            <div className='flex bg-white items-center rounded-[100%] justify-center w-[60px] h-full'>
-              <img className='w-[45%]' src={images["java.png"].default.src} alt="React" /> 
-            </div>
-            <h1 className='mx-4 font-bold text-2xl text-white'>Java</h1>
-        </div>
-        <div className='w-full h-[40px]'></div>
+        <div className='w-screen flex flex-col sm:flex-row'>
+          <div className='bg-cyan-600 w-screen sm:w-1/2 flex flex-col items-center sm:max-w-lg'>
+           <h1 className='text-white mt-4 font-bold text-xl sm:text-3xl'>Language/Framework Handled</h1>
+            <div className='w-full mt-8 sm:ml-8'>
+              <Strip image={Images.js} name='Javascript' />
+             <Strip image={Images.react} name='React' />
+              <Strip image={Images.next} name='Next JS' />
+              <Strip image={Images.tailwind} name='Tailwind CSS' />
+              <Strip image={Images.java} name='Java' />
+              <Strip image={Images.cs} name='C#' />
+           </div>
          </div>
-         <div className='w-full flex flex-col items-center bg-cyan-600'>
-            <h1 className='text-white text-5xl font-bold mt-4'>SKILLS</h1>
-            <div className='w-full'>
-              <h3 className='font-bold text-white text-3xl mx-4 my-4'>Soft Skills</h3>
+         <div className='w-full bg-cyan-800 flex flex-col items-center '>
+              <h1 className='text-white mb-[5rem] font-bold mt-8 text-6xl'>SKILLS</h1>
               <div>
-                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Creativity</h4>
-                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Teamwork</h4>
-                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Critical thinking</h4>
-                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Willingness to learn</h4>
+              <div className='flex flex-col sm:flex-row items-center'>
+                <h1 className='text-white font-bold text-3xl ml-1 sm:ml-[30px]'>Soft Skills</h1>
+                <div className=' ml-4 sm:ml-8 sm:border-l-2 p-4'>
+                  <h3 className='text-white font-bold text-2xl my-2'>• Creativity</h3>
+                  <h3 className='text-white font-bold text-2xl my-2'>• Critical Thinking</h3>
+                  <h3 className='text-white font-bold text-2xl my-2'>• Dependability</h3>
+                  <h3 className='text-white font-bold text-2xl my-2'>• Effective Communication</h3>
+                  <h3 className='text-white font-bold text-2xl my-2'>• Adaptability</h3>
+                </div> 
               </div>
-            </div>
-            <div className='w-full'>
-              <h3 className='font-bold text-white text-3xl mx-4 my-4'>Hard Skills</h3>
-              <div>
-                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Profficient in React JS</h4>
-                <h4 className='font-bold text-white text-xl mx-8 my-2'>• UI Frameworks</h4>
-                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Back-end Development</h4>
-                <h4 className='font-bold text-white text-xl mx-8 my-2'>• Adobe After Effects</h4>
+
+              <div className='flex flex-col sm:flex-row mt-8 items-center'>
+                <h1 className='text-white font-bold text-3xl ml-4'>Hard Skills</h1>
+                <div className='ml-8 sm:border-l-2 p-4'>
+                  <h3 className='text-white font-bold text-2xl my-2'>• Web Development</h3>
+                  <h3 className='text-white font-bold text-2xl my-2'>• Frontend Frameworks (React, Semantic Ui)</h3>
+                  <h3 className='text-white font-bold text-2xl my-2'>• Database Management (Mongo DB, MySql)</h3>
+                  <h3 className='text-white font-bold text-2xl my-2'>• Backend Development (Next JS)</h3>
+                  <h3 className='text-white font-bold text-2xl my-2'>• After Effects</h3>
+                </div> 
               </div>
-            </div>
-            <div className='w-full h-[40px]'></div>
+
+              </div>
+
          </div>
         </div>
         <Footer/>
