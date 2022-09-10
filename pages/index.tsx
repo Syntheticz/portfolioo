@@ -19,7 +19,7 @@ const Home: NextPage = () => {
           <div className='bg-covers bg-cover bg-blend-overlay bg-cyan-500 bg-opacity-30 flex flex-col sm:flex-row w-full h-auto sm:max-h-fit items-center'>
             <div className='z-10 w-full sm:w-1/2 h-screen flex items-center justify-center'>
                 <div className='w-full flex flex-col items-center sm:items-start sm:w-2/3 h-auto'>
-                    <h3 className='text-white text-xl font-semibold'>Hi I'm</h3>
+                    <h3 className='text-white text-xl font-semibold'>Hi I&apos;m</h3>
                     <h1 className='text-white text-3xl -ml-1 my-[.5rem] sm:text-6xl lg:text-6xl font-semibold '>Philip Guiang</h1>
                     <h3 className='text-white text-xl font-semibold'>Full Stack Developer</h3>
                 </div>
