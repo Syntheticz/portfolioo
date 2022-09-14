@@ -20,8 +20,20 @@ export default function Contact() {
     
   const [form, setForm] = useState({name: '', email: '', message: ''});
 
-  const handleOnClick = () => {
-    console.log(form)
+  const handleOnClick = async () => {
+    try {
+      const res = await fetch('https://www.philguiang.ga/api/Submit', {
+        method : 'POST',
+        headers: {
+          "Accept": "application/json",
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify(form)
+      });
+      alert('message successfully sent :) thankyou for your feedback')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
