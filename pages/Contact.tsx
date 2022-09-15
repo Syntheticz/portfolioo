@@ -23,10 +23,9 @@ export default function Contact() {
   const handleOnClick = async (event : React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     try {
-      const res = await fetch('https://philguiang.ga/api/Submit', {
+      const res = await fetch('https://www.philguiang.ga/api/Submit', {
         method : 'POST',
         headers: {
-          "Access-Control-Allow-Origin": "https://philguiang.ga",
           "Accept": "application/json",
           "Content-type": "application/json"
         },
