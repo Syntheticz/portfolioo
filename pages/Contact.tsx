@@ -26,6 +26,7 @@ export default function Contact() {
       const res = await fetch('https://philguiang.ga/api/Submit', {
         method : 'POST',
         headers: {
+          "Access-Control-Allow-Origin": "https://philguiang.ga",
           "Accept": "application/json",
           "Content-type": "application/json"
         },
