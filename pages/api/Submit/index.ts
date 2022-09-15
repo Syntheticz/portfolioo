@@ -33,7 +33,7 @@ export default async function  handler(
       break;
       case 'GET' : {
         try {
-          const msg = {Hello : 'HAHAHAH'}; 
+          const msg = await messages.find({}); 
           
           res.status(201).json({success: true, data: msg})
         } catch (error) {

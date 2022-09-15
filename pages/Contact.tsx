@@ -20,9 +20,10 @@ export default function Contact() {
     
   const [form, setForm] = useState({name: '', email: '', message: ''});
 
-  const handleOnClick = async () => {
+  const handleOnClick = async (event : React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
     try {
-      const res = await fetch('https://www.philguiang.ga/api/Submit', {
+      const res = await fetch('http://localhost:3000/api/Submit', {
         method : 'POST',
         headers: {
           "Accept": "application/json",
@@ -38,6 +39,7 @@ export default function Contact() {
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setForm(() => {return {...form,[event.target.name] : event.target.value,}})
+
   }
 
   
@@ -55,7 +57,7 @@ export default function Contact() {
               <div className='w-fullflex items-center justify-center'>
                 <h1 className='text-white font-bold text-[1.75rem] sm:text-5xl my-4'>Got any suggestions?</h1>
               </div>
-              
+              <form onSubmit={handleOnClick}>
               <div className='w-full h-full'>
                 <div className='flex px-4 justify-center flex-col my-4'>
                   <label className='text-white font-bold text-2xl sm:text-4xl mb-4' htmlFor="name">Name: </label>
@@ -64,7 +66,7 @@ export default function Contact() {
 
                 <div className='flex px-4 justify-center flex-col my-4'>
                   <label className='text-white font-bold text-2xl sm:text-4xl mb-4' htmlFor="name">Email: </label>
-                  <input onChange={handleChange} className='h-8 sm:h-12 text-xl sm:text-2xl p-2 rounded-md ' name='email' type={'email'}/>
+                  <input onChange={handleChange} required className='h-8 sm:h-12 text-xl sm:text-2xl p-2 rounded-md ' name='email' type={'email'}/>
                 </div>
 
                 <div className='flex px-4 justify-center flex-col my-4'>
@@ -72,8 +74,10 @@ export default function Contact() {
                   <textarea onChange={handleChange} className='h-16 sm:h-24 text-xl sm:text-2xl p-2 rounded-md ' name='message'/>
                 </div>
                
-                <button type='submit' onClick={handleOnClick} className='absolute right-4 sm:mt-4 bg-cyan-500 p-2 rounded-lg text-white font-bold text-2xl sm:text-3xl hover:bg-cyan-900 active:bg-white active:text-cyan-500'>Submit</button>
-              </div>
+                <input type='submit' value={'Submit'} className='absolute right-4 sm:mt-4 bg-cyan-500 p-2 rounded-lg text-white font-bold text-2xl sm:text-3xl hover:bg-cyan-900 active:bg-white active:text-cyan-500'/>
+              </div>   
+              </form>
+             
           </div>
         </div>
         <Footer/>
